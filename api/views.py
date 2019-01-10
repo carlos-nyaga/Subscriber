@@ -9,7 +9,7 @@ from .models import Subscriber
 # Create your views here.
 class SubscriberView(APIView):
     def get(self,request):
-        all_subscribers = Subscriber.object.all()
+        all_subscribers = Subscriber.objects.all()
         serialized_subscribers = SubscriberSerializer(all_subscribers, many = True)
         return Response(serialized_subscribers.data)
 
